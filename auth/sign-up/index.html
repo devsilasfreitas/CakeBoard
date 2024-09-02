@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | DashCompany</title>
+    <script src="script.js" defer></script>
+    <script src="/verify-auth.js"></script>
 </head>
 <body>
     <form action="" id="form">
         <label for="companyName">
             Razão Social: 
             <input type="text" name="companyName" id="companyName">
+        </label>
+        <label for="fantasyName">
+            Nome Fantasia: 
+            <input type="text" name="fantasyName" id="fantasyName">
+        </label>
+        <label for="cnpj">
+            CNPJ: 
+            <input type="text" name="cnpj" id="cnpj">
         </label>
         <label for="email">
             Email: 
@@ -19,6 +29,11 @@
             Senha: 
             <input type="password" name="password" id="password">
         </label>
+        <label for="confirmPassword">
+            Confirmar Senha: 
+            <input type="password" name="confirmPassword" id="confirmPassword">
+        </label>
+        <button type="submit">Cadastrar</button>
     </form>
 </body>
 </html>
