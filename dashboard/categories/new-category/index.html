@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorias | CakeBoard</title>
+    <title>CakeBoard</title>
     <script src="/header.js" defer></script>
     <script src="/verify-auth.js"></script>
-    <script src="./categories.js" defer></script>
+    <script src="./new-category.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,18 +22,13 @@
         </nav>
     </header>
     <main>
-        <section>
-            <h2>Categorias</h2>
-            <a href="./new-category/">Nova Categoria</a>
-        </section>
-        <section>
-            <article id="categoriesList">
-
-            </article>
-            <article id="categoryDetails">
-
-            </article>
-        </section>
+        <form action="" id="form">
+            <label for="name">
+                Nome: 
+                <input type="text" name="name" id="name">
+            </label>
+            <button>Criar</button>
+        </form>
     </main>
 </body>
 </html>
