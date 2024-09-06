@@ -42,7 +42,8 @@ form.addEventListener('submit', (ev) => {
         products,
         cpf: cpf.value || null,
         paymentMethod: paymentMethod.value,
-        userId: user.id
+        userId: user.id,
+        createdAt: new Date()
     }
 
     sales.push(sale);
@@ -64,7 +65,7 @@ function addProduct() {
         <input type='hidden' class='products' value='${product.id}' />
         <label for='quantity'>
             Quantidade:
-            <input type='number' id='quantity-${product.id}' />
+            <input type='number' id='quantity-${product.id}' value='1' />
         </label>
     </div>`;
 

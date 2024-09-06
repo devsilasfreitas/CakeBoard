@@ -32,6 +32,7 @@ sales.map(sale => {
 
     const element = 
     `<div data-saleId='${sale.id}' onclick='update(this)'>
+        <p>${new Date(sale.createdAt).toLocaleString()}</p>
         <h3>R$ ${price.toFixed(2).replace('.', ',')}</h3>
         <h3>CPF: ${sale.cpf || 'Não informado'}</h3>
         <p>Método de pagamento: ${paymentMethods[sale.paymentMethod]}</p>
