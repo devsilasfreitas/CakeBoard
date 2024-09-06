@@ -24,7 +24,8 @@ form.addEventListener('submit', (ev) => {
 
     const category = {
         id: generateRandomId(),
-        name
+        name,
+        userId: user.id
     }
 
     categories.push(category);

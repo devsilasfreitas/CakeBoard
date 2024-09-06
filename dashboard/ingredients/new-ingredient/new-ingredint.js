@@ -15,29 +15,32 @@ form.addEventListener('submit', (ev) => {
     ev.preventDefault();
 
     const { name, price, photo } = form;
-    if (name.length < 2) {
+    if (name.value.length < 2) {
         alert('O nome do ingrediente deve ter mais que dois caracteres!');
         return;
     }
 
-    if (price === 0) {
+    if (price.value === 0) {
         alert('O preço do ingrediente não pode ser igual a zero!');
         return;
     }
 
-    if (ingredients.find((ingredient) => ingredient.name === name)) {
+    if (ingredients.find((ingredient) => ingredient.name === name.value)) {
         alert('Já existe com ingrediente com este nome!');
         return;
     }
 
     const ingredient = {
         id: generateRandomId(),
-        name,
-        price,
-        photo
+        name: name.value,
+        price: price.value,
+        photo: photo.value,
+        userId: user.id
     }
 
     ingredients.push(ingredient);
 
     localStorage.setItem('ingredients', JSON.stringify(ingredients));
+
+    alert('Ingrediente cadastrado com sucesso!');
 })

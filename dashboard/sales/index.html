@@ -4,8 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CakeBoard</title>
+    <script src="/header.js" defer></script>
+    <script src="/verify-auth.js"></script>
+    <script src="./sales.js" defer></script>
 </head>
 <body>
+    <header>
+        <a href="/dashboard/">
+            <h1>CakeBoard</h1>
+        </a>
+        <nav>
+            <a href="/dashboard/products/">Produtos</a>
+            <a href="/dashboard/ingredients/">Ingredientes</a>
+            <a href="/dashboard/sales">Vendas</a>
+            <a href="/dashboard/categories/">Categorias</a>
+            <p>Olá, </p>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Vendas</h2>
+            <a href="./new-sale/">Nova Venda</a>
+        </section>
+        <section>
+            <article id="salesList">
 
+            </article>
+            <article id="saleDetails">
+
+            </article>
+        </section>
+    </main>
 </body>
 </html>
