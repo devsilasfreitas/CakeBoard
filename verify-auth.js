@@ -6,8 +6,7 @@ const user = users.find(user => user.id === userId);
 console.log(window.location.pathname)
 
 if (!user && window.location.pathname !== '/auth/sign-in/' && window.location.pathname !== '/auth/sign-up/' && window.location.pathname !== '/') {
-    console.log('aaa')
-    window.location.href = '/auth/sign-in';
+    window.location.href = '/auth/sign-in/';
 }
 
 if (user && (window.location.pathname === '/auth/sign-in' || window.location.pathname === '/auth/sign-up')) {
