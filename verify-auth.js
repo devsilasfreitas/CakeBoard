@@ -5,11 +5,11 @@ const user = users.find(user => user.id === userId);
 
 console.log(window.location.pathname)
 
-if (!user && window.location.pathname !== '/auth/sign-in/' && window.location.pathname !== '/auth/sign-up/' && window.location.pathname !== '/') {
+if (!user && !window.location.pathname.includes('/auth/sign-in') && !window.location.pathname.includes('/auth/sign-up') && window.location.pathname !== '/') {
     window.location.href = '/auth/sign-in/';
 }
 
-if (user && (window.location.pathname === '/auth/sign-in' || window.location.pathname === '/auth/sign-up')) {
+if (user && (window.location.pathname.includes('/auth/sign-in') || window.location.pathname.includes('/auth/sign-up'))) {
     window.location.href = '/dashboard';
 };
 
