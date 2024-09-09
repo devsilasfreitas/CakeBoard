@@ -45,14 +45,12 @@ if (profitPerMonth.length < 6) {
         const lastMonth = new Date(profitPerMonth[0].month);
         lastMonth.setDate(1)
         const month = new Date(lastMonth.setMonth(lastMonth.getMonth() - 1));
-        console.log(month);
         profitPerMonth.unshift({ month, profit: 0 });
     }
 }
 
 profitPerMonth.slice(0, 6).map((month, i, data) => {
-    const height = data.length > 0 ? month.profit / [...data].sort((a, b) => b.profit - a.profit)[0].profit * 100 : 0;
-    console.log(height);
+    const height = (month.profit / [...data].sort((a, b) => b.profit - a.profit)[0].profit * 100) || 0;
     const element = 
     `<div style="height: 100%; display: flex; flex-direction: column; justify-content: end; width: 50px;" title="R$ ${parseFloat(month.profit).toFixed(2).replace('.', ',')}">
         <div style="height: ${height === 0 ? '1': height}%; background-color: var(--primary-color); width: 100%;"></div>

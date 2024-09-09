@@ -75,6 +75,7 @@ form.addEventListener('submit', (ev) => {
     localStorage.setItem('products', JSON.stringify(products));
 
     alert('Produto cadastrado com sucesso!');
+    window.location.href = "../"
 });
 
 function addIngredient() {

@@ -51,6 +51,7 @@ form.addEventListener('submit', (ev) => {
     localStorage.setItem('sales', JSON.stringify(sales));
 
     alert('Venda cadastrada com sucesso!');
+    window.location.href = "../";
 });
 
 function addProduct() {

@@ -32,5 +32,5 @@ form.addEventListener('submit', (ev) => {
 
     localStorage.setItem('categories', JSON.stringify(categories));
     alert('A categoria foi adicionada com sucesso!');
-
+    window.location.href = "../"
 })

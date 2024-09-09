@@ -43,4 +43,5 @@ form.addEventListener('submit', (ev) => {
     localStorage.setItem('ingredients', JSON.stringify(ingredients));
 
     alert('Ingrediente cadastrado com sucesso!');
+    window.location.href = "../"
 })
