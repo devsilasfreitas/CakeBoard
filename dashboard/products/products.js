@@ -8,7 +8,7 @@ const productDetails = document.getElementById('productDetails');
 
 products.map(product => {
     const element = 
-    `<div data-productId='${product.id}' onclick='update(this)'>
+    `<div data-productId='${product.id}' onclick='update(this)' class='product'>
         <img src='${product.photo}' alt='${product.name}' />
         <h3>${product.name}</h3>
         <p>R$ ${parseFloat(product.price).toFixed(2).replace('.', ',')}</p>
@@ -23,7 +23,7 @@ function update(element) {
 
     const ingredientsList = product.ingredients.map((productIngredient) => {
         const ingredient = ingredients.find((ingredient) => ingredient.id === productIngredient.id);
-        return `<li>${ingredient.name} - ${productIngredient.quantity}</li>`;
+        return `<li><img src="${ingredient.photo}">${ingredient.name} - ${productIngredient.quantity}</li>`;
     }).join('');
 
     const ingredientsPrice = product.ingredients.map((productIngredient) => {

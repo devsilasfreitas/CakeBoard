@@ -1,7 +1,8 @@
-const link = document.getElementById('access-link');
-const user = sessionStorage.getItem('user');
+const actionContainer = document.getElementById('action-container');
+const link = document.getElementById('redirect-url');
 
 if (user) {
-    link.setAttribute('href', '/dashboard');
-    link.innerText = 'Dashboard';
+    actionContainer.innerHTML = `<a href="/dashboard" class="sign-in">Dashboard</a>`;
+    link.innerHTML = 'Dashboard';
+    link.href = '/dashboard';
 }

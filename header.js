@@ -1,5 +1,10 @@
-const header = document.getElementsByTagName('header')?.[0];
+const name = document.getElementById('companyName');
 
-if (header) {
-    header.children[1].children[4].innerHTML += `${user.fantasyName}!`;
+if (name) {
+    name.innerHTML += `${user.fantasyName}!`;
+}
+
+function logOut () {
+    localStorage.removeItem('userId');
+    window.location.href = '/auth/sign-in';
 }

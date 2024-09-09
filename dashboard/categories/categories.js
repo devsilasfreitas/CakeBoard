@@ -5,9 +5,11 @@ const categories = JSON.parse(localStorage.getItem('categories') || '[]').filter
 const products = JSON.parse(localStorage.getItem('products') || '[]').filter((product) => product.userId === user.id);
 
 categories.map(category => {
+    const categoryProducts = products.filter(product => product.categoryId === category.id)
     const element = 
-    `<div data-categoryId='${category.id}' onclick='update(this)'>
+    `<div data-categoryId='${category.id}' onclick='update(this)' class="category">
         <h3>${category.name}</h3>
+        <p>${categoryProducts.length} Produtos</p>
     </div>`;
 
     categoriesContainer.innerHTML += element;
@@ -19,7 +21,7 @@ function update(element) {
     const categoryProducts = products.filter((product) => product.categoryId === category.id);
 
     const productsList = categoryProducts.map((product) => {
-        return `<li>${product.name}</li>`;
+        return `<li class="product"><img src="${product.photo}" class="product-photo">${product.name}</li>`;
     }).join('');
 
     const categoryElement = 

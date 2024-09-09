@@ -69,7 +69,13 @@ function addProduct() {
         </label>
     </div>`;
 
+    const quantities = {}
+    
+    Array.from(productsContainer.querySelectorAll('input[type="number"]')).map((product) => quantities[product.id] = product.value);
+
     productsContainer.innerHTML += element;
+
+    Array.from(productsContainer.querySelectorAll('input[type="number"]')).map((product) => product.value = quantities[product.id] || product.value);
 
     productId.value = '';
     Array.from(productId.children).find((option) => option.value === product.id).remove();

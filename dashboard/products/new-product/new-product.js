@@ -88,8 +88,10 @@ function addIngredient() {
         <p>${ingredient.name}</p>
         <p>R$ ${parseFloat(ingredient.price).toFixed(2).replace('.', ',')}</p>
         <input type='hidden' class='ingredients' value='${ingredient.id}' />
-        <input type='number' id='quantity-${ingredient.id}' value='1' />
-        <button onclick='removeIngredient(this)'>Remover</button>
+        <label for='quantity-${ingredient.id}'>
+            Quantidade:
+            <input type='number' id='quantity-${ingredient.id}' value='1' />
+        </label>
     </div>`;
 
     ingredientsContainer.innerHTML += element;

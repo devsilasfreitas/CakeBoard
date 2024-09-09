@@ -6,7 +6,7 @@ const products = JSON.parse(localStorage.getItem('products') || '[]').filter((pr
 
 ingredients.map(ingredient => {
     const element = 
-    `<div data-ingredientId='${ingredient.id}' onclick='update(this)'>
+    `<div data-ingredientId='${ingredient.id}' onclick='update(this)' class="ingredient">
         <img src='${ingredient.photo}' alt='${ingredient.name}' />
         <h3>${ingredient.name}</h3>
         <p>R$ ${parseFloat(ingredient.price).toFixed(2).replace('.', ',')}</p>
@@ -22,7 +22,7 @@ function update(element) {
     const productsList = products.filter((product) => product.ingredients.find((productIngredient) => productIngredient.id === ingredientId));
 
     const productsElements = productsList.map((product) => {
-        return `<li>${product.name}</li>`;
+        return `<li><img src="${product.photo}">${product.name}</li>`;
     }).join('');
 
     const ingredientElement = 

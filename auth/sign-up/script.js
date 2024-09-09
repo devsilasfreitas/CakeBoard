@@ -33,7 +33,7 @@ form.addEventListener('submit', (ev) => {
         return;
     }
 
-    users.push({ id, email, password, companyName, fantasyName, cnpj });
+    users.push({ id, email, password, companyName, fantasyName, cnpj, theme: 'dark', primaryColor: '#007bff' });
     localStorage.setItem('users', JSON.stringify(users));
 
     alert('Cadastro realizado com sucesso');

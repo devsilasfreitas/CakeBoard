@@ -25,7 +25,7 @@ form.addEventListener('submit', (ev) => {
         return;
     }
 
-    if (ingredients.find((ingredient) => ingredient.name === name.value)) {
+    if (ingredients.find((ingredient) => ingredient.name === name.value && ingredient.userId === user.id)) {
         alert('Já existe com ingrediente com este nome!');
         return;
     }
