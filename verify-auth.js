@@ -13,25 +13,29 @@ if (user && (window.location.pathname === '/auth/sign-in' || window.location.pat
 
 const root = document.querySelector(':root');
 
-root.style.setProperty('--primary-color', user.primaryColor);
+if (user) {
+    root.style.setProperty('--primary-color', user.primaryColor);
+    
+    if (user.theme === 'dark') {
+        root.style.setProperty('--bg-color', '#333');
+        root.style.setProperty('--text-color', '#fff');
+        root.style.setProperty('--bg-color-secondary', '#444');
+        root.style.setProperty('--thead-bg-color', '#555');
+        root.style.setProperty('--item-list-bg-color', '#444');
+        root.style.setProperty('--border-color', '#555');
+        root.style.setProperty('--header-bg-color', '#222');
+    } else {
+        root.style.setProperty('--bg-color', '#fff');
+        root.style.setProperty('--text-color', '#333');
+        root.style.setProperty('--bg-color-secondary', '#f5f5f5');
+        root.style.setProperty('--thead-bg-color', '#f0f0f0');
+        root.style.setProperty('--item-list-bg-color', '#f5f5f5');
+        root.style.setProperty('--border-color', '#e0e0e0');
+        root.style.setProperty('--header-bg-color', '#fff');
+    }
 
-if (user.theme === 'dark') {
-    root.style.setProperty('--bg-color', '#333');
-    root.style.setProperty('--text-color', '#fff');
-    root.style.setProperty('--bg-color-secondary', '#444');
-    root.style.setProperty('--thead-bg-color', '#555');
-    root.style.setProperty('--item-list-bg-color', '#444');
-    root.style.setProperty('--border-color', '#555');
-    root.style.setProperty('--header-bg-color', '#222');
-} else {
-    root.style.setProperty('--bg-color', '#fff');
-    root.style.setProperty('--text-color', '#333');
-    root.style.setProperty('--bg-color-secondary', '#f5f5f5');
-    root.style.setProperty('--thead-bg-color', '#f0f0f0');
-    root.style.setProperty('--item-list-bg-color', '#f5f5f5');
-    root.style.setProperty('--border-color', '#e0e0e0');
-    root.style.setProperty('--header-bg-color', '#fff');
 }
+
 
 function changeTheme() {
     const theme = user.theme === 'dark' ? 'light' : 'dark';
