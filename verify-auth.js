@@ -3,6 +3,8 @@ const users = JSON.parse(localStorage.getItem('users')) || [];
 
 const user = users.find(user => user.id === userId);
 
+console.log(window.location.href)
+
 if (!user && window.location.pathname !== '/auth/sign-in/' && window.location.pathname !== '/auth/sign-up/' && window.location.pathname !== '/') {
     window.location.href = '/auth/sign-in';
 }
